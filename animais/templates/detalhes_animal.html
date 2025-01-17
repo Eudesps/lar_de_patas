@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Detalhes do Animal{% endblock %}
+{% block content %}
+   <h2>Detalhes do Animal</h2>
+   
+   <p><strong>Nome:</strong> {{ Animal.nome }}</p>
+   <p><strong>Idade em meses:</strong> {{ Animal.idade_em_meses }}</p>
+   <p><strong>Descrição:</strong> {{ Animal.descricao }}</p>
+   
+   <a href="{% url 'atualizar_animal' Animal.pk %}">Editar Animal</a>
+{% endblock %}

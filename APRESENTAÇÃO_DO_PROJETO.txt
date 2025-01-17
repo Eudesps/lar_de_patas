@@ -1,0 +1,8 @@
+                                 *LAR DE PATAS*
+
+Será uma plataforma onde tutores que por algum motivo não estão conseguindo 
+cuidar da melhor forma de seu pets podem colocar-lo para a adoção. Podendo ser filhotes ou não. 
+
+Então esse site permite o cadastro de usuários que podem estar lá para poder cadastrar um pet,
+ou para procurar um pet para adotar. Então o animal precisa ter um tutor associado, que é um usuário
+que cadastrou o animal e que está cadastrado no sistema. 

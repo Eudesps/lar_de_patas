@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lar de Patas{% endblock %}</title>
+    <style>
+        .blur-nav {
+            position: fixed; /* Fixa a navbar no topo */
+            top: 0;
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%);
+            max-width: 900px; /* Define o comprimento máximo */
+            width: 90%; /* Garante responsividade em telas menores */
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: 50; /* Garante que fique acima do conteúdo */
+        }
+        body {
+            padding-top: 4.5rem; /* Compensa a navbar fixa */
+            background: linear-gradient(135deg, #e2b40e 90%, #f88101 50%);
+            min-height: 100vh;
+        }
+        footer {
+            color: white;
+        }
+    </style>
+
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+        <!-- Navigation Bar -->
+        <nav class="blur-nav px-6 py-4 shadow-lg mx-auto mt-4 max-w-4xl rounded-lg shadow-lg px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-gray-800">Lar de Patas</h1>
+            </div>
+        </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        {% block content %}
+            <h1 class="text-center text-white">Bem-vindo ao Lar de Patas</h1>
+            <p class="text-center text-white">Seu lugar para ajudar e adotar amigos de quatro patas.</p>
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="max-w-4xl mx-auto mt-12 mb-8 text-center">
+        <p class="text-white-600">Developed ❤️ by José Eudes</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Animais{% endblock %}
+
+{% block content %}
+ <h2>Animais disponíveis</h2>
+ <ul>
+    {% for animal in animais %}
+        <li>Nome: {{ animal.nome }} - {{ animal.idade_em_meses }} meses. Raça: {{ animal.raca }}</li>
+        <a href="{% url 'atualizar_animal' animal.pk %}">Editar</a>
+        <a href="{% url 'excluir_animal' animal.pk %}" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
+    {% endfor %}
+ </ul>
+{% endblock %}
