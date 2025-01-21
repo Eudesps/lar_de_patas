@@ -1,13 +1,71 @@
 {% extends 'base.html' %}
 {% block title %}Animais{% endblock %}
-
 {% block content %}
+
+<style>
+    h2 {
+       font-size: 2rem; /* Ajuste o tamanho */
+       font-weight: bold; /* Torne o texto em negrito */
+       color: #ffffff; /* Cor do texto */
+       text-align: center; /* Centralize o texto */
+       margin-bottom: 20px; /* Espaçamento inferior */
+       margin-top: 60px;
+   }
+   .cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards "quebrem linha" */
+    gap: 16px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    margin: 20px 0; /* Espaçamento em volta do contêiner */
+}
+
+.card {
+    width: 18rem; /* Largura fixa dos cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que o conteúdo fique dentro dos limites */
+    transition: transform 0.3s ease; /* Efeito ao passar o mouse */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta levemente no hover */
+}
+
+.card-body {
+    padding: 16px; /* Espaçamento interno do card */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+ </style>
+
+
  <h2>Animais disponíveis</h2>
- <ul>
+ {% load static %}
+ <img src="{% static 'img/pata.webp' %}" alt="Pata" width="200" height="400">
+ <div class="cards-container">
     {% for animal in animais %}
-        <li>Nome: {{ animal.nome }} - {{ animal.idade_em_meses }} meses. Raça: {{ animal.raca }}</li>
-        <a href="{% url 'atualizar_animal' animal.pk %}">Editar</a>
-        <a href="{% url 'excluir_animal' animal.pk %}" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ animal.nome }}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{ animal.idade_em_meses }} meses</h6>
+          <p class="card-text">Raça: {{ animal.raca }}</p>
+          <a href="{% url 'atualizar_animal' animal.pk %}" class="card-link">Editar</a>
+          <a href="{% url 'excluir_animal' animal.pk %}" class="card-link" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
+        </div>
+    </div>
     {% endfor %}
- </ul>
+</div>
+    <img src="{% static 'img/pata.webp' %}" alt="Pata" width="200" height="400" style="float: right; margin-left: 10px;">
 {% endblock %}

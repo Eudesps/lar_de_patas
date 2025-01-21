@@ -24,12 +24,27 @@
         footer {
             color: white;
         }
+        #nav-btn-group .btn-primary.active,
+        #nav-btn-group .btn-primary:active,
+        #nav-btn-group .show > .btn-primary.dropdown-toggle {
+            background-color:rgb(42, 42, 42); /* Nova cor de fundo */
+            border-color:rgb(89, 57, 34); /* Nova cor da borda */
+            color: #ffffff; /* Cor do texto */
+        }
+        #nav-btn-group .btn-primary {
+            background-color: rgb(42, 42, 42); /* Nova cor de fundo */
+            border-color: rgb(89, 57, 34); /* Nova cor da borda */
+            color: #ffffff; /* Cor do texto */
+        }
     </style>
 
     <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -40,7 +55,15 @@
         <!-- Navigation Bar -->
         <nav class="blur-nav px-6 py-4 shadow-lg mx-auto mt-4 max-w-4xl rounded-lg shadow-lg px-6 py-4">
             <div class="flex items-center justify-between">
-                <h1 class="text-xl font-bold text-gray-800">Lar de Patas</h1>
+                
+                <h1 class="text-xl font-bold text-gray-800">
+                    <a href="{% url 'home' %}" >Lar de Patas</a>
+                    </h1>
+
+                <div class="btn-group" id ="nav-btn-group">
+                    <a href="{% url 'listar_animais' %}" class="btn btn-primary active" aria-current="page">Listar Animais</a>
+                    <a href="{% url 'adicionar_animal' %}" class="btn btn-primary">Cadastrar Animal</a>
+                </div>
             </div>
         </nav>
 

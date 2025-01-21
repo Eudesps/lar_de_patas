@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 {% block title %}Detalhes do Animal{% endblock %}
 {% block content %}
+<style>
+   h2 {
+      font-size: 2rem; /* Ajuste o tamanho */
+      font-weight: bold; /* Torne o texto em negrito */
+      color: #ffffff; /* Cor do texto */
+      text-align: center; /* Centralize o texto */
+      margin-bottom: 20px; /* Espaçamento inferior */
+      margin-top: 60px;
+  }
+</style>
+
    <h2>Detalhes do Animal</h2>
    
    <p><strong>Nome:</strong> {{ Animal.nome }}</p>
