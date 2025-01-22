@@ -1,70 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Adicionar Animal{% endblock %}
 {% block content %}
-<style>
-   h2 {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ffffff;
-      text-align: center;
-      margin-bottom: 20px;
-      margin-top: 60px;
-   }
 
-   form {
-      background-color: #3f3d11;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 600px;  
-      width: 100%; 
-      margin: 0 auto; 
-   }
-
-   #form_text {
-      color: #ffffff;
-   }
-
-   .label_text {
-      color: #ffffff;
-      font-weight: bold;
-      margin-bottom: 10px;
-      display: block;
-   }
-
-   .form-input {
-      width: 100%; /* Garante que os campos ocupem toda a largura */
-      border: 2px solid #000000;
-      transition: all 0.3s ease;
-      padding: 0.5em 0.75em;
-      margin-bottom: 15px; /* Espaçamento entre os campos */
-      border-radius: 4px; /* Arredonda os cantos dos campos */
-   }
-
-   .form-input:focus {
-      border-color: #f88101;
-      box-shadow: 0 0 0 3px rgba(253, 160, 133, 0.2);
-   }
-
-   .submit_button {
-      background-color: #f88101;
-      color: #000000;
-      width: 100%;
-      padding: 12px 24px;
-      border-radius: 12px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      margin-top: 20px; /* Espaço superior para o botão */
-   }
-
-   .submit_button:hover {
-      background-color: #d76b1f;
-      transform: scale(1.05);
-   }
-
-</style>
+{% load static %}
+<link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
 <h2>Adicionar Animal</h2>
 

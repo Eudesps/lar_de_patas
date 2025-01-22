@@ -2,16 +2,9 @@
 {% block title %}Atualizar Animal{% endblock %}
 {% block content %}
 
-<style>
-   h2 {
-      font-size: 2rem; /* Ajuste o tamanho */
-      font-weight: bold; /* Torne o texto em negrito */
-      color: #ffffff; /* Cor do texto */
-      text-align: center; /* Centralize o texto */
-      margin-bottom: 20px; /* Espaçamento inferior */
-      margin-top: 60px;
-  }
-</style>
+{% load static %}
+<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
 
 <h2>Atualizar Animal</h2>
 <form method="post">

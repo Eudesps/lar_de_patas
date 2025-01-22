@@ -1,49 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Detalhes do Animal{% endblock %}
 {% block content %}
-<style>
-   h2 {
-      font-size: 2rem; /* Ajuste o tamanho */
-      font-weight: bold; /* Torne o texto em negrito */
-      color: #ffffff; /* Cor do texto */
-      text-align: center; /* Centralize o texto */
-      margin-bottom: 20px; /* Espaçamento inferior */
-      margin-top: 60px;
-  }
-  #carouselExampleIndicators {
-   max-width: 600px; /* Define a largura máxima */
-   margin: 0 auto; /* Centraliza o carrossel */
-   border-radius: 15px; /* Arredonda as bordas do carrossel */
-   overflow: hidden; /* Garante que o conteúdo respeite o arredondamento */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destacar */
-}
 
-#carouselExampleIndicators .carousel-inner {
-   height: 300px; /* Define a altura do carrossel */
-}
-#carouselExampleIndicators .carousel-inner img {
-   width: 100%; /* Garante que a largura ocupe 100% */
-   height: 100%; /* Garante que a altura ocupe todo o espaço disponível */
-   object-fit: cover; /* Cobre completamente o contêiner sem distorcer */
-}
-.text-home {
-   max-width: 800px; /* Limita a largura do parágrafo */
-   margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
-   padding: 20px; /* Adiciona espaçamento interno */
-   text-align: justify; /* Alinha o texto de forma justificada */
-   font-size: 1.1rem; /* Define o tamanho da fonte */
-   line-height: 1.6; /* Ajusta o espaçamento entre linhas */
-   color: #333; /* Define a cor do texto */
-}
-</style>
+{% load static %}
+<link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
    <h2>Bem-vindo a nossa plataforma</h2>
 
       <p class="text-home">
       O Lar de Patas é uma plataforma dedicada a transformar a vida de cães/gatos em situação de vulnerabilidade, conectando-os a pessoas dispostas a oferecer um lar cheio de amor e cuidado. Nosso objetivo é facilitar o processo de adoção responsável, ajudando a dar uma segunda chance a esses animais incríveis.
       </p>
-
-      {% load static %}
 
       <!-- Carousel -->
       <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 4rem;" data-ride="carousel">
