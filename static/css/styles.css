@@ -21,7 +21,7 @@ h2 {
 }
 body {
     padding-top: 4.5rem; /* Compensa a navbar fixa */
-    background: linear-gradient(135deg, #e2b40e 90%, #f88101 50%);
+    background: linear-gradient(135deg, #59509b 90%, #23234d 50%);
     min-height: 100vh;
 }
 footer {
@@ -50,7 +50,7 @@ footer {
 }
 
 #carouselExampleIndicators .carousel-inner {
- height: 300px; /* Define a altura do carrossel */
+ height: 300px;
 }
 #carouselExampleIndicators .carousel-inner img {
  width: 100%; /* Garante que a largura ocupe 100% */
@@ -64,12 +64,12 @@ footer {
  text-align: justify; /* Alinha o texto de forma justificada */
  font-size: 1.1rem; /* Define o tamanho da fonte */
  line-height: 1.6; /* Ajusta o espaçamento entre linhas */
- color: #333; /* Define a cor do texto */
+ color: #0a0a19; /* Define a cor do texto */
 }
 
 /*ADICIONAR ANIMAL*/
 form {
-    background-color: #3f3d11;
+    background-color: #252830;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -104,7 +104,7 @@ form {
  }
 
  .submit_button {
-    background-color: #f88101;
+    background-color: #59509b;
     color: #000000;
     width: 100%;
     padding: 12px 24px;
@@ -117,17 +117,19 @@ form {
  }
 
  .submit_button:hover {
-    background-color: #d76b1f;
+    background-color: #666695;
     transform: scale(1.05);
  }
 
- /*LISTAR ANIMAIS*/
- .cards-container {
+/*LISTAR ANIMAIS*/
+.cards-container {
     display: flex;
     flex-wrap: wrap; /* Permite que os cards "quebrem linha" */
     gap: 16px; /* Espaçamento entre os cards */
     justify-content: center; /* Centraliza os cards horizontalmente */
-    margin: 20px 0; /* Espaçamento em volta do contêiner */
+    margin: 20px auto; /* Espaçamento vertical e centralização horizontal */
+    padding: 0 8px; /* Menos espaço nas laterais */
+    max-width: 1000px; /* Largura máxima dos cards mais limitada */
 }
 
 .card {
@@ -159,3 +161,20 @@ form {
 .card-link:hover {
     text-decoration: underline;
 }
+
+
+/*DETALHES DO ANIMAL*/
+.detalhe_text {
+    font-size: 18px;         /* Tamanho do texto */
+    color: #4CAF50;          /* Cor da fonte (verde, por exemplo) */
+    margin: 0 auto;          /* Centraliza o conteúdo */
+    text-align: center;      /* Centraliza o texto */
+    line-height: 1.5;        /* Aumenta o espaçamento entre as linhas */
+    width: 80%;              /* Limita a largura para o conteúdo não ficar muito largo */
+}
+
+.detalhe_text p {
+    font-size: 20px;         /* Aumenta o tamanho do texto nos parágrafos */
+    color: #bac1fc;          /* Cor do texto dos parágrafos (cinza escuro, por exemplo) */
+}
+

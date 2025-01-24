@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     {% load static %}
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
 </head>
 <body>
     <div class="container mt-5">
@@ -28,6 +29,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block mt-
                     3">Login</button>
+                    <p>Não possui uma conta? <a href="{% url 'register' %}">Faça o seu cadastro aqui</a>.</p>
                     </form>
                     {% if messages %}
                     <div class="mt-3">

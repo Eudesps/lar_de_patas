@@ -1,5 +1,7 @@
 from django import forms
 from .models import Animal
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 class AnimalForm(forms.ModelForm):
     class Meta:
@@ -21,9 +23,44 @@ class AnimalForm(forms.ModelForm):
             'descricao': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Descrição do animal',
-                'rows': 4,  # Número de linhas do campo de texto
+                'rows': 4,  
             }),
             'sexo': forms.Select(attrs={
                 'class': 'form-select',
             }),
         }
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+        labels = {
+            'username': 'Nome de Usuário',
+            'email': 'E-mail',
+            'password1': 'Senha',
+            'password2': 'Confirmação de Senha',
+        }
+        widgets = {
+            'username': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Digite seu nome de usuário',
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Digite seu e-mail',
+            }),
+            'password1': forms.PasswordInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Digite sua senha',
+            }),
+            'password2': forms.PasswordInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Confirme sua senha',
+            }),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for field_name in self.fields:
+            self.fields[field_name].help_text = None

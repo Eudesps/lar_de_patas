@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from .forms import AnimalForm
 from django.contrib.auth import logout
+from .forms import CustomUserCreationForm
+from django.contrib import messages
 
 @login_required
 def listar_animais(request):
@@ -26,17 +28,17 @@ def adicionar_animal(request):
 
 @login_required
 def atualizar_animal(request, pk):
-    produto = get_object_or_404(Animal, pk=pk)
+    animal = get_object_or_404(Animal, pk=pk)
     
     if request.method == 'POST':
-        form = AnimalForm(request.POST, instance=produto)
+        form = AnimalForm(request.POST, instance=animal)
         if form.is_valid():
             form.save()
-            return redirect('listar_produtos')
+            return redirect('listar_animais')
     else:
-        form = AnimalForm(instance=Animal)
+        form = AnimalForm(instance=animal)
     
-    return render(request, 'atualizar_animal.html', {'form': form, 'animal': Animal})
+    return render(request, 'atualizar_animal.html', {'form': form, 'animal': animal})
 
 @login_required
 def detalhes_animal(request, pk):
@@ -74,3 +76,15 @@ def custom_logout(request):
 @login_required
 def home_page(request):
     return render(request, 'home.html')
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f"Conta criada com sucesso para {username}!")
+            return redirect('login')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'register.html', {'form': form})

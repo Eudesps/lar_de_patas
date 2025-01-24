@@ -20,18 +20,6 @@ class Animal(models.Model):
         default="M",
     )  # Sexo do Animal 
 
-    tutor = models.ForeignKey(
-        'TutorAtual', on_delete=models.SET_NULL, null=True, related_name='animais'
-    )  # Tutor associado ao animal (FK)
-
-class TutorAtual(models.Model):    
-    # Atributos do tutor
-    nome = models.CharField(max_length=100)  
-    telefone = models.CharField(max_length=15)  
-    email = models.EmailField(blank=True, null=True)
-    motivo_doacao = models.TextField()
-    data_cadastro = models.DateField(auto_now_add=True)  # Data em que o animal foi cadastrado para adoção
-
 
 #COMANDOS SQL 
 """

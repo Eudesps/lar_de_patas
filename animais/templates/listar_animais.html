@@ -7,19 +7,17 @@
 
  <h2>Animais disponíveis</h2>
  {% load static %}
- <img src="{% static 'img/pata.webp' %}" alt="Pata" width="200" height="400">
+
  <div class="cards-container">
     {% for animal in animais %}
-    <div class="card">
+    <div class="card" onclick="window.location.href='{% url 'detalhes_animal' animal.pk %}';">
         <div class="card-body">
           <h5 class="card-title">{{ animal.nome }}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">{{ animal.idade_em_meses }} meses</h6>
           <p class="card-text">Raça: {{ animal.raca }}</p>
-          <a href="{% url 'atualizar_animal' animal.pk %}" class="card-link">Editar</a>
-          <a href="{% url 'excluir_animal' animal.pk %}" class="card-link" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
+
         </div>
     </div>
     {% endfor %}
 </div>
-    <img src="{% static 'img/pata.webp' %}" alt="Pata" width="200" height="400" style="float: right; margin-left: 10px;">
 {% endblock %}

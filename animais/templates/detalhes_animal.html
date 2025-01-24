@@ -7,10 +7,13 @@
 
 
    <h2>Detalhes do Animal</h2>
-   
-   <p><strong>Nome:</strong> {{ Animal.nome }}</p>
-   <p><strong>Idade em meses:</strong> {{ Animal.idade_em_meses }}</p>
-   <p><strong>Descrição:</strong> {{ Animal.descricao }}</p>
-   
-   <a href="{% url 'atualizar_animal' Animal.pk %}">Editar Animal</a>
+   <div class="detalhe_text">
+      <p><strong>Nome:</strong> {{ Animal.nome }}</p>
+      <p><strong>Idade em meses:</strong> {{ Animal.idade_em_meses }}</p>
+      <p><strong>Descrição:</strong> {{ Animal.descricao }}</p>
+      <p><strong>Sexo:</strong> {{ Animal.sexo }}</p>
+      <p><strong>Raça:</strong> {{ Animal.raca }}</p>
+      <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'atualizar_animal' Animal.pk %}">Editar Animal</a></button>
+      <button type="button" class="btn btn-secondary btn-sm"><a href="{% url 'excluir_animal' Animal.pk %}" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a></button>
+   </div>   
 {% endblock %}
