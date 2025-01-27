@@ -57,69 +57,15 @@ footer {
  height: 100%;
  object-fit: cover;
 }
-.text-home {
+.text_home {
  max-width: 800px; 
  margin: 0 auto; 
  padding: 20px;
  text-align: justify; 
  font-size: 1.1rem; 
  line-height: 1.6;
- color: #0a0a19; 
+ color: #c3c3f3; 
 }
-
-/*ADICIONAR ANIMAL*/
-form {
-    background-color: #252830;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;  
-    width: 100%; 
-    margin: 0 auto; 
- }
-
- #form_text {
-    color: #ffffff;
- }
-
- .label_text {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
- }
-
- .form-input {
-    width: 100%;
-    border: 2px solid #000000;
-    transition: all 0.3s ease;
-    padding: 0.5em 0.75em;
-    margin-bottom: 15px;
-    border-radius: 4px;
- }
-
- .form-input:focus {
-    border-color: #f88101;
-    box-shadow: 0 0 0 3px rgba(253, 160, 133, 0.2);
- }
-
- .submit_button {
-    background-color: #59509b;
-    color: #000000;
-    width: 100%;
-    padding: 12px 24px;
-    border-radius: 12px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 20px;
- }
-
- .submit_button:hover {
-    background-color: #666695;
-    transform: scale(1.05);
- }
 
 /*LISTAR ANIMAIS*/
 .cards-container {
@@ -129,7 +75,7 @@ form {
     justify-content: center;
     margin: 20px auto;
     padding: 0 8px;
-    max-width: 1000px;
+    max-width: 1500px;
 }
 
 .card {
@@ -175,4 +121,57 @@ form {
 .detalhe_text p {
     font-size: 20px;
     color: #bac1fc;
+}
+
+#text_login{
+    color: #ffffff;
+}
+
+/*FORMULARIOS*/
+form {
+    background-color: #252830;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;  
+    width: 100%; 
+    margin: 0 auto; 
+}
+
+#form_text {
+    color: #ffffff;
+}
+.label_text {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+.form-input {
+    width: 100%;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+    padding: 0.5em 0.75em;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.form-input:focus {
+    border-color: #f88101;
+    box-shadow: 0 0 0 3px rgba(253, 160, 133, 0.2);
+}
+.submit_button {
+    background-color: #59509b;
+    color: #000000;
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+.submit_button:hover {
+    background-color: #666695;
+    transform: scale(1.05);
 }
