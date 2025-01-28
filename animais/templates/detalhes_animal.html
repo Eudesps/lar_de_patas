@@ -13,6 +13,7 @@
       <p><strong>Descrição:</strong> {{ Animal.descricao }}</p>
       <p><strong>Sexo:</strong> {{ Animal.sexo }}</p>
       <p><strong>Raça:</strong> {{ Animal.raca }}</p>
+      <p><strong>Espécie:</strong> {{ Animal.especie }}</p>
       <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'atualizar_animal' Animal.pk %}">Editar Animal</a></button>
       <button type="button" class="btn btn-secondary btn-sm"><a href="{% url 'excluir_animal' Animal.pk %}" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a></button>
    </div>   

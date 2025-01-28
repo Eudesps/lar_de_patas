@@ -1,12 +1,17 @@
 from django import forms
-from .models import Animal
+from .models import Animal, Especie
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+
+class EspecieForm (forms.ModelForm): 
+    class Meta: 
+        model = Especie 
+        fields = ['nome']   
 
 class AnimalForm(forms.ModelForm):
     class Meta:
         model = Animal
-        fields = ['nome', 'idade_em_meses', 'raca', 'descricao', 'sexo']
+        fields = ['nome', 'idade_em_meses', 'raca', 'descricao', 'sexo', 'especie']
         widgets = {
             'nome': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -26,6 +31,9 @@ class AnimalForm(forms.ModelForm):
                 'rows': 4,  
             }),
             'sexo': forms.Select(attrs={
+                'class': 'form-select',
+            }),
+            'especie': forms.Select(attrs={
                 'class': 'form-select',
             }),
         }
@@ -64,3 +72,4 @@ class CustomUserCreationForm(UserCreationForm):
 
         for field_name in self.fields:
             self.fields[field_name].help_text = None
+          
