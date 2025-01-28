@@ -7,4 +7,4 @@ Então esse site permite o cadastro de usuários que podem estar lá para poder 
 ou para procurar um pet para adotar.
 
 <h3>Tela 1 (HOME)</h3>
-![Captura de tela 2025-01-28 083913](https://github.com/user-attachments/assets/e08464b4-dbb1-4d6c-8a1b-31c4f1f30ed6)
+<img width="900" alt="Poster" src="https://github.com/user-attachments/assets/e08464b4-dbb1-4d6c-8a1b-31c4f1f30ed6">
