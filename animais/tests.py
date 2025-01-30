@@ -2,9 +2,13 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Especie, Animal
+from .forms import CustomUserCreationForm
 from django.core.exceptions import ValidationError
 
+#TESTANDO AS VIEWS
 class AnimalViewsTestCase(TestCase):
+
+
     def setUp(self):
         """Configuração inicial antes dos testes"""
         # Criando usuário com todos os campos necessários
@@ -44,8 +48,7 @@ class AnimalViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Pelagem longa e dócil")
 
-from .forms import CustomUserCreationForm
-
+#TESTANDO OS FORMS
 class CustomUserCreationFormTest(TestCase):
     def test_form_valid(self):
         """Testa se o formulário é válido quando preenchido corretamente"""
@@ -80,8 +83,10 @@ class CustomUserCreationFormTest(TestCase):
         form = CustomUserCreationForm(data=form_data)
         self.assertFalse(form.is_valid()) 
         self.assertIn("email", form.errors)  
+
 #TESTANDO AS MODELS
 class AnimalModelValidationTest(TestCase):
+
 
     def setUp(self):
         self.especie = Especie.objects.create(nome="Cachorro")
