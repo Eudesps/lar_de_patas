@@ -39,6 +39,15 @@ class AnimalForm(forms.ModelForm):
         }
 
 class CustomUserCreationForm(UserCreationForm):
+
+    email = forms.EmailField(
+        required=True,  # Agora o campo é obrigatório
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Digite seu e-mail',
+        })
+    )
+        
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
@@ -52,10 +61,6 @@ class CustomUserCreationForm(UserCreationForm):
             'username': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Digite seu nome de usuário',
-            }),
-            'email': forms.EmailInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Digite seu e-mail',
             }),
             'password1': forms.PasswordInput(attrs={
                 'class': 'form-control',
